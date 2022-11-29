@@ -65,8 +65,9 @@ namespace SocialNetwork.PLL.Views.MessagesView
                         var messages = messageService.GetReceived(user, mail);
                         foreach (var message in messages)
                         {
-                            Console.WriteLine($"\nОт пользователя {userService.FindById(message.Sender_id).Email}: ");
+                            Console.WriteLine($"От пользователя {userService.FindById(message.Sender_id).Email}: ");
                             Console.WriteLine(message.Content);
+                            Console.WriteLine();
                         }
                     }
                     catch (UserNotFoundException)
@@ -74,7 +75,7 @@ namespace SocialNetwork.PLL.Views.MessagesView
                         Alert.Message("Пользователь с таким почтовым адресом не найден.");
                         Show(user);
                     }
-                    Console.WriteLine("Назад (Enter)");
+                    Console.WriteLine("\nНазад (Enter)");
                     Console.ReadLine();
                     Show(user);
                     break;

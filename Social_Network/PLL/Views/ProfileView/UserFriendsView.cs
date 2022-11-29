@@ -56,7 +56,7 @@ namespace SocialNetwork.PLL.Views
                     try
                     {
                         friendService.AddFriend(request);
-                        Success.Message("Пользователь успешно добавлен в друзья.");
+                        Success.Message("\nПользователь успешно добавлен в друзья.");
                         Show(user);
                     }
                     catch(UserNotFoundException)
